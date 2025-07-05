@@ -1,37 +1,24 @@
-#ifndef SCALARCONVERTER_HPP
-#define SCALARCONVERTER_HPP
-
+#pragma once
 
 #include <iostream>
-#include <string>
-#include <cctype>
-#include <limits>
 #include <sstream>
-
-
+#include <cstdlib>
+#include <iomanip>
 
 class ScalarConverter
 {
-    private:
-        ScalarConverter();
-        ~ScalarConverter();
-    
-        ScalarConverter &operator=(ScalarConverter const &other);
-        ScalarConverter(ScalarConverter const &other);
-        
-    public:
-
-        static bool isChar(const std::string &literal);
-        static bool isInt(const std::string &literal);
-        static bool isDouble(const std::string &literal);
-
-
-
-        
-        static void convert(std::string literal);
+	private:
+		ScalarConverter();
+		ScalarConverter(const ScalarConverter& other);
+		~ScalarConverter();
+		ScalarConverter& operator=(const ScalarConverter& other);
+	public:
+		static void convert(const std::string& literal);
 };
 
-
-
-
-#endif
+void handle_float(const std::string& literal);
+void print_char(char c);
+void handle_char(const std::string& literal);
+void hande_int(const std::string& literal);
+void hanle_pseudo(const std::string& literal);
+int get_sign(const std::string& literal);

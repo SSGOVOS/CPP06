@@ -1,14 +1,12 @@
 #include "ScalarConverter.hpp"
 
-
-int main()
+int main(int ac, char** av)
 {
-    std::string s1 = "42";
-    std::string s2 = "-123";
-    std::string s3 = "4.2";
-
-    std::cout << ScalarConverter::isInt(s1) << std::endl; // true
-    std::cout << ScalarConverter::isInt(s2) << std::endl; // true
-    std::cout << ScalarConverter::isInt(s3) << std::endl; // false
-
+	if (ac != 2)
+	{
+		std::cout << "Invalid arguments!" << std::endl;
+		return (1);
+	}
+	ScalarConverter::convert(av[1]);
+	return (0);
 }
